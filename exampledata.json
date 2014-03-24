@@ -1,0 +1,31 @@
+{
+	"election": "Gemeenteraad 2014",
+	"date": "2014-Mar-18",
+	"district": "Utrecht",
+	"location": [
+		{
+			"name": "Voorbeeld kieslokaal 1",
+			"adres": "straatnaam 42, Utrecht",
+			"lat": "52.0981",
+			"lon": "5.1314",
+			"results": {
+				"blanco": 128,
+				"ongeldig": 7,
+				"D66": 243,
+				"Groenlinks": 423
+			}
+		},
+		{
+			"name": "Voorbeeld kieslokaal 2",
+			"adres": "straatnaam2 13, Utrecht",
+			"lat": "52.1081",
+			"lon": "5.1714",
+			"results": {
+				"blanco": 45,
+				"ongeldig": 14,
+				"D66": 187,
+				"Groenlinks": 146
+			}
+		}
+	]
+}
