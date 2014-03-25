@@ -8,11 +8,19 @@
 			"adres": "straatnaam 42, Utrecht",
 			"lat": "52.0981",
 			"lon": "5.1314",
+			"blanc": 128,
+			"invalid": 7,
 			"results": {
-				"blanco": 128,
-				"ongeldig": 7,
-				"D66": 243,
-				"Groenlinks": 423
+				"D66": {
+					"Persoon a": 12,
+					"Persoon b": 3,
+					"Persoon c": 37
+				},
+				"Groenlinks": {
+					"Persoon d": 76,
+					"Persoon e": 4,
+					"Persoon f": 19
+				}
 			}
 		},
 		{
@@ -20,11 +28,19 @@
 			"adres": "straatnaam2 13, Utrecht",
 			"lat": "52.1081",
 			"lon": "5.1714",
+			"blanc": 145,
+			"invalid": 38,
 			"results": {
-				"blanco": 45,
-				"ongeldig": 14,
-				"D66": 187,
-				"Groenlinks": 146
+				"D66": {
+					"Persoon a": 89,
+					"Persoon b": 43,
+					"Persoon c": 20
+				},
+				"Groenlinks": {
+					"Persoon d": 67,
+					"Persoon e": 18,
+					"Persoon f": 20
+				}
 			}
 		}
 	]
