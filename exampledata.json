@@ -2,7 +2,19 @@
 	"election": "Gemeenteraad 2014",
 	"date": "2014-Mar-18",
 	"district": "Utrecht",
-	"location": [
+	"candidates": {
+		"D66": [
+			"Persoon a",
+			"Persoon b",
+			"Persoon c"
+		],
+		"Groenlinks": [
+			"Persoon d",
+			"Persoon e",
+			"Persoon f"
+		]
+	},
+	"locations": [
 		{
 			"name": "Voorbeeld kieslokaal 1",
 			"adres": "straatnaam 42, Utrecht",
@@ -11,16 +23,8 @@
 			"blanc": 128,
 			"invalid": 7,
 			"results": {
-				"D66": {
-					"Persoon a": 12,
-					"Persoon b": 3,
-					"Persoon c": 37
-				},
-				"Groenlinks": {
-					"Persoon d": 76,
-					"Persoon e": 4,
-					"Persoon f": 19
-				}
+				"D66": [12, 3, 37],
+				"Groenlinks": [76, 4, 19]
 			}
 		},
 		{
@@ -31,16 +35,8 @@
 			"blanc": 145,
 			"invalid": 38,
 			"results": {
-				"D66": {
-					"Persoon a": 89,
-					"Persoon b": 43,
-					"Persoon c": 20
-				},
-				"Groenlinks": {
-					"Persoon d": 67,
-					"Persoon e": 18,
-					"Persoon f": 20
-				}
+				"D66": [89, 43, 20],
+				"Groenlinks": [67, 18, 20]
 			}
 		}
 	]
