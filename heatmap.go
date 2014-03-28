@@ -82,24 +82,6 @@ func CreateHeatmap(points []ValuePoint, box LatLonBox, width, height int) *image
 	return img
 }
 
-func ColorblindBlue(val float32, alpha uint8) color.RGBA {
-	return color.RGBA{
-		247 - uint8(239*val),
-		251 - uint8(203*val),
-		255 - uint8(148*val),
-		alpha,
-	}
-}
-
-func Blue(val float32) color.RGBA {
-	return color.RGBA{
-		0,
-		0,
-		255,
-		uint8(255 * val),
-	}
-}
-
 func main() {
 	width := 2590
 	height := 1541
