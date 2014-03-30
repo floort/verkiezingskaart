@@ -63,6 +63,10 @@ func gaussian(height, dist, width float64) float64 {
 	return height * math.Exp(-(dist*dist)/(2*width*width))
 }
 
+func gradient(val float64) color.RGBA {
+	return color.RGBA{255-uint8(255*val),0,uint8(255*val),255}
+}
+
 func CreateHeatmap(points []ValuePoint, box LatLonBox, width, height int) *image.RGBA {
 	minval, maxval := getextremepoints(points)
 	img := image.NewRGBA(image.Rect(0, 0, width, height))
@@ -71,13 +75,15 @@ func CreateHeatmap(points []ValuePoint, box LatLonBox, width, height int) *image
 			posx := box.MinLat + float64(x)*(box.MaxLat - box.MinLat)/float64(width)
 			posy := box.MinLon + float64(y)*(box.MaxLon - box.MinLon)/float64(height)
 			val := float64(0.0)
+			weight := float64(0.0)
 			for i := range points {
-				dist := math.Sqrt((posx-points[i].Lat)*(posx-points[i].Lat) + (posy-points[i].Lon)*(posy-points[i].Lon))
-				val += gaussian(points[i].Value, dist, 0.1)
+				distsquared := (posx-points[i].Lat)*(posx-points[i].Lat) + (posy-points[i].Lon)*(posy-points[i].Lon)
+				val += points[i].Value/distsquared
+				weight += 1.0/distsquared
 			}
-			val = val/float64(len(points))
-			img.SetRGBA(x, y, color.RGBA{0,255,255,uint8(256 * (val-minval)/(maxval-minval))})
-		}
+			val = val/weight
+			val = (val-minval)/(maxval-minval)
+			img.SetRGBA(x, y, gradient(val))		}
 	}
 	return img
 }
@@ -89,6 +95,8 @@ func main() {
 		{1.0, 3.0, 12.0},
 		{2.0, 1.0, 8.3},
 		{5.0, 2.0, 16.9},
+		{4.0, 2.2, 29.3},
+		{3.5, 1.8, 4.5},
 	}
 	box := GetBoundingBox(points, 0.2)
 	img := CreateHeatmap(points, box, width, height)
